@@ -1,0 +1,35 @@
+{
+	"bsonType": "object",
+	"required": [
+		"main_num",
+		"unit",
+		"description"
+	],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"main_num": {
+			"type": "int",
+			"description": "大数字"
+		},
+		"unit": {
+			"type": "string",
+			"description": "单位"
+		},
+		"description": {
+			"type": "string",
+			"description": "描述"
+		},
+		"sort": {
+			"type": "int",
+			"description": "排序"
+		}
+	}
+}

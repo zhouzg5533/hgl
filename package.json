@@ -1,0 +1,73 @@
+{
+    "uni_modules": {
+        "encrypt": [
+            "common/function/myPubFunction.js",
+            "uniCloud-aliyun/cloudfunctions/router/index.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/category/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/category/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/category/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/category/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/company/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/company/sys/getInfo.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/company/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/guestbook/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/guestbook/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/guestbook/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/guestbook/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/honor/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/honor/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/honor/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/honor/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/indexdata/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/indexdata/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/indexdata/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/indexdata/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/news/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/news/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/news/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/news/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/pageheader/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/pageheader/sys/getInfo.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/pageheader/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/product/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/product/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/product/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/product/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/swiper/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/swiper/sys/delete.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/swiper/sys/getList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/swiper/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/website/sys/add.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/website/sys/getInfo.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/admin/bwin/website/sys/update.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getHonorList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getIndexData.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getNewsDetail.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getNewsList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getProductDetail.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/getProductList.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/init.js",
+            "uniCloud-aliyun/cloudfunctions/router/service/client/bwin/pub/postComment.js"
+        ],
+	"extends" : 
+	{
+		"sn" : "MY9MPeLAuWs2kAXG3KttAE+JqtDazZEH8JCnGwJWYONG819VKeEy+s+zTE4iuhgsKoY6xB0SJrcm/uS8sK/+0EgOA6ihEYcyIcHgYUERjJREJmL6aZoX3u9yubOEpcbm/VaMjBvVQ6gGaiAAYWAGCB6SEkQFdY3vJ4ftfbiAwD5/RIrNDjdYDxbZNHDNZSF+GkaQZcE9YxtrL6CNDBcfo6Dmqp3xiBHmQ45Ir+C53DimN7U/RRnvCtPQYGtzTcBs0Gbc0z/SKhElXsG9LNz7hx1EsjfLeOhLBInPpQFQ3tNXPCl6bJDrPD/AT3ArL1wBpEXRYi6GOTZyd3yVAw7vNn+4p6bzyLkyRt/B6ZwZbJktj1egk/CU7cRvnHZWpov/Xt26lcKc1C7sVorY9iyKhvXlAmRUpdYWN0MHVUTjGfKN67Gp60J0lmSJakMQO5GVkdfWcTrw0ZPFbI+dECy6lny6k20yj2av1FU/J8FMo8M="
+	}
+    },
+    "id": "bwin-brand-client",
+    "displayName": "bwinBrand多端自适应企业官网、uniCloud云端一体【用户端】",
+    "version": "1.1.2",
+    "description": "无需服务器，无需运维，无需修改任何代码，基于uniapp + uniCloud打造的bwinBrand企业官网让你在10分钟内打造属于自己的展示网站/小程序/App",
+    "keywords": [
+        "官网",
+        "模板",
+        "uniCloud",
+        "vk"
+    ],
+    "dcloudext": {
+        "category": [
+            "uniCloud",
+            "云端一体项目模板"
+        ]
+    }
+}

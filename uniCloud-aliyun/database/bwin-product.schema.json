@@ -1,0 +1,77 @@
+{
+	"bsonType": "object",
+	"permission": {
+		"create": false,
+		"delete": false,
+		"read": "doc.status == true",
+		"update": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（商品 ID），系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "商品名称",
+			"title": "名称",
+			"trim": "both"
+		},
+		"category_id": {
+			"bsonType": "string",
+			"description": "分类 id，参考`bwin-category._id`表",
+			"foreignKey": "bwin-category._id"
+		},
+		"keywords": {
+			"bsonType": "string",
+			"description": "关键词",
+			"title": "商品关键词描述",
+			"trim": "both"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "详细描述",
+			"title": "详细描述",
+			"trim": "both"
+		},
+		"cover_image": {
+			"bsonType": "string",
+			"description": "商品封面图，用于在列表或搜索结果中预览显示",
+			"title": "封面图地址",
+			"trim": "both"
+		},
+		"swiper_list": {
+			"bsonType": "array",
+			"description": "商品详情页的banner图地址"
+		},
+		"status": {
+			"bsonType": "bool",
+			"description": "是否显示"
+		},
+		"is_top": {
+			"bsonType": "int",
+			"description": "是否置顶"
+		},
+		"function_des": {
+			"bsonType": "string",
+			"description": "功能描述",
+			"title": "功能描述",
+			"trim": "both"
+		},
+		"tech_des": {
+			"bsonType": "string",
+			"description": "技术描述",
+			"title": "技术描述",
+			"trim": "both"
+		},
+		"other_des": {
+			"bsonType": "string",
+			"description": "其他补充描述",
+			"title": "其他补充描述",
+			"trim": "both"
+		},
+		"read_num": {
+			"bsonType": "int",
+			"description": "阅读量"
+		}
+	}
+}

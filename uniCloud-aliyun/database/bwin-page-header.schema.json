@@ -1,0 +1,61 @@
+{
+	"bsonType": "object",
+	"required": [
+		"page",
+		"main_title",
+		"sub_title",
+		"image_url"
+	],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"page": {
+			"bsonType": "array",
+			"description": "所属页面",
+			"enum": [{
+					"value": "product",
+					"text": "产品中心"
+				},
+				{
+					"value": "news",
+					"text": "新闻中心"
+				},
+				{
+					"value": "honor",
+					"text": "荣誉资质"
+				},
+				{
+					"value": "about",
+					"text": "关于我们"
+				},
+				{
+					"value": "common",
+					"text": "通用"
+				}
+			]
+		},
+		"main_title": {
+			"bsonType": "text",
+			"description": "头图主标题"
+		},
+		"sub_title": {
+			"bsonType": "text",
+			"description": "头图副标题"
+		},
+		"image_url": {
+			"bsonType": "text",
+			"description": "头图链接"
+		},
+		"is_immersive": {
+			"bsonType": "bool",
+			"description": "沉浸式导航栏"
+		}
+	}
+}

@@ -1,0 +1,45 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [
+		"logo1",
+		"logo2",
+		"icp_code",
+		"cache_time"
+	],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"logo1": {
+			"bsonType": "string",
+			"description": "文件，正方形logo"
+		},
+		"logo2": {
+			"bsonType": "string",
+			"description": "文件，长方形logo"
+		},
+		"icp_code": {
+			"bsonType": "string",
+			"description": "ICP备案号"
+		},
+		"police_code": {
+			"bsonType": "string",
+			"description": "公安网备案号"
+		},
+		"copyright": {
+			"bsonType": "string",
+			"description": "底部版权信息"
+		},
+		"cache_time": {
+			"bsonType": "int",
+			"description": "全站数据缓存时间"
+		}
+	}
+}

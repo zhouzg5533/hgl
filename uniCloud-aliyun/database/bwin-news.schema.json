@@ -1,0 +1,65 @@
+{
+	"bsonType": "object",
+	"required": ["user_id", "title", "content"],
+	"permission": {},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（用户 ID），系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "文章作者ID， 参考`uni-id-users` 表",
+			"foreignKey": "uni-id-users._id",
+			"defaultValue": {
+				"$env": "uid"
+			}
+		},
+		"category_id": {
+			"bsonType": "string",
+			"title": "分类",
+			"description": "分类 id，参考`bwin-category`表",
+			"foreignKey": "bwin-category._id",
+			"enum": {
+				"collection": "bwin-category",
+				"field": "name as text, _id as value"
+			}
+		},
+		"title": {
+			"bsonType": "string",
+			"title": "标题",
+			"description": "标题",
+			"label": "标题",
+			"trim": "both"
+		},
+		"content": {
+			"bsonType": "string",
+			"title": "文章内容",
+			"description": "文章内容",
+			"label": "文章内容",
+			"trim": "right"
+		},
+		"des": {
+			"bsonType": "string",
+			"title": "文章摘录",
+			"description": "文章摘录",
+			"label": "摘要",
+			"trim": "both"
+		},
+		"is_top": {
+			"bsonType": "int",
+			"title": "是否置顶",
+			"description": "是否置顶"
+		},
+		"cover_image": {
+			"bsonType": "string",
+			"title": "封面图",
+			"description": "缩略图地址",
+			"label": "封面大图",
+			"trim": "both"
+		},
+		"read_num": {
+			"bsonType": "int",
+			"description": "阅读量"
+		}
+	}
+}

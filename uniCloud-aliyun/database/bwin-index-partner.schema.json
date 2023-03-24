@@ -1,0 +1,27 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"partner_name": {
+			"type": "string",
+			"description": "伙伴名称"
+		},
+		"image_url": {
+			"type": "string",
+			"description": "图片地址"
+		},
+		"sort": {
+			"type": "string",
+			"description": "排序，数字越大越靠前"
+		}
+	}
+}

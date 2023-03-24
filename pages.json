@@ -1,0 +1,99 @@
+{
+	"easycom": {
+		"^b-(.*)": "@/components/b-$1/b-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle":"custom"
+			}
+		}
+	    ,{
+            "path" : "pages/error/404",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"404"
+            }
+            
+        }
+        ,{
+            "path" : "pages/about/index",
+            "style" :                                                                                    
+            {
+                 "navigationStyle":"custom",
+				 "navigationBarTitleText":"关于我们"
+            }
+            
+        }
+        ,{
+            "path" : "pages/product/list",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"产品中心"
+            }
+            
+        }
+        ,{
+            "path" : "pages/news/list",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"新闻中心"
+            }
+            
+        }
+        ,{
+            "path" : "pages/about/honor",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"荣誉资质"
+            }
+            
+        }
+        ,{
+            "path" : "pages/news/read",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"阅读"
+            }
+            
+        }
+        ,{
+            "path" : "pages/product/detail",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+				"navigationBarTitleText":"产品详情"
+            }
+            
+        }
+        ,{
+            "path" : "pages/news/search",
+            "style" :                                                                                    
+            {
+                "navigationStyle": "custom",
+				"navigationBarTitleText":"搜索"
+            }
+            
+        }
+        ,{
+            "path" : "pages/webview/webview",
+            "style" :                                                                                    
+            {
+               "navigationStyle": "custom"
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "皇冠螺官网",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#FFFFFF"
+	}
+}

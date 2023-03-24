@@ -1,0 +1,170 @@
+/* css 初始化 */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: auto;
+	box-sizing: border-box;
+	font-family: 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+	overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* 文字行数 */
+@for $i from 1 through 5 {
+	.b-line-#{$i} {
+		/* #ifdef APP-NVUE */
+		// nvue下，可以直接使用lines属性，这是weex特有样式
+		lines: $i;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		flex: 1;
+		/* #endif */
+
+		/* #ifndef APP-NVUE */
+		// vue下，单行和多行显示省略号需要单独处理
+		@if $i == '1' {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		} @else {
+			display: -webkit-box !important;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-break: break-all;
+			-webkit-line-clamp: $i;
+			-webkit-box-orient: vertical !important;
+		}
+		/* #endif */
+	}
+}
+
+/* 通用容器 */
+.container {
+	width: 100%;
+	min-height: auto;
+	position: relative;
+}
+
+/* 页面主容器 */
+.main {
+	width: 100%;
+	max-width: 1440px;
+	padding: 30px 0;
+	margin: 0 auto;
+	transition: padding 0.3s ease;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	z-index: 2;
+	position: relative;
+	padding: 15px;
+}
+
+.empty-wrap {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	text {
+		margin-top: 10px;
+		font-size: 16px;
+		color: #888888;
+	}
+}
+
+/* 小屏幕下主容器占满 */
+@media screen and (max-width: 768px) {
+	.main {
+		padding: 15px;
+	}
+	.main-max-width {
+		width: 100%;
+	}
+}
+
+// 定义字体(px)单位
+@for $i from 10 through 40 {
+	.b-font-#{$i} {
+		font-size: $i + px;
+	}
+}
+
+// 定义字体图标(px)单位
+@for $i from 10 through 60 {
+	.b-iconfont-#{$i} {
+		font-size: $i + px;
+	}
+}
+
+// 定义内外边距，历遍1-80
+@for $i from 0 through 80 {
+	// 只要双数和能被5除尽的数
+	@if $i % 2 == 0 or $i % 5 == 0 {
+		// 得出：b-margin-30或者b-m-30
+		.b-margin-#{$i},
+		.b-m-#{$i} {
+			margin: $i + px !important;
+		}
+
+		// 得出：b-padding-30或者b-p-30
+		.b-padding-#{$i},
+		.b-p-#{$i} {
+			padding: $i + px !important;
+		}
+
+		@each $short, $long in l left, t top, r right, b bottom {
+			// 缩写版，结果如： b-m-l-30
+			// 定义外边距
+			.b-m-#{$short}-#{$i} {
+				margin-#{$long}: $i + px !important;
+			}
+
+			// 定义内边距
+			.b-p-#{$short}-#{$i} {
+				padding-#{$long}: $i + px !important;
+			}
+
+			// 完整版，结果如：b-margin-left-30
+			// 定义外边距
+			.b-margin-#{$long}-#{$i} {
+				margin-#{$long}: $i + px !important;
+			}
+
+			// 定义内边距
+			.b-padding-#{$long}-#{$i} {
+				padding-#{$long}: $i + px !important;
+			}
+		}
+	}
+}
+
+// 按钮
+.b-button-mini {
+	border-radius: 2px !important;
+	background-color: #ea6101 !important;
+	font-size: 12px !important;
+	width: 100px;
+	margin: 0;
+}
+
+// 浏览器滚动栏美化
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track {
+	background: rgba(135, 135, 135, 0.1);
+}
+::-webkit-scrollbar-thumb {
+	background: rgba(135, 135, 135, 0.4);
+	border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(135, 135, 135, 0.8);
+}

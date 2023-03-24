@@ -1,0 +1,2480 @@
+// 初始化后将导入测试数据
+{
+
+	"bwin-about-honor": {
+		"data": [{
+				"_id": {
+					"$oid": "6248066f9a3d140001643f14"
+				},
+				"name": "默认奖项",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/c2ec1535-3074-4893-baec-14464af67d55.jpg",
+				"_add_time": 1648887407387,
+				"_add_time_str": "2022-04-02 16:16:47",
+				"sort": "1"
+			},
+			{
+				"_id": {
+					"$oid": "624b14a78cc573000131bd9a"
+				},
+				"name": "奖项示例",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/73aff1a4-f3c4-4d5b-8bff-16df4337f601.jpg",
+				"target_url": "/",
+				"sort": 1,
+				"_add_time": 1649087655621,
+				"_add_time_str": "2022-04-04 23:54:15"
+			},
+			{
+				"_id": {
+					"$oid": "624b15169a3d140001b64167"
+				},
+				"name": "奖项示例",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/4e082dc8-5ea0-4687-9541-231b4c237828.jpg",
+				"target_url": "/",
+				"sort": 1,
+				"_add_time": 1649087766607,
+				"_add_time_str": "2022-04-04 23:56:06"
+			}
+		],
+		"index": [{
+			"IndexName": "_add_time_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "_add_time",
+					"Direction": "-1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [],
+			"permission": {
+				"read": true
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"name": {
+					"bsonType": "string",
+					"title": "奖项名称"
+				},
+				"image_url": {
+					"bsonType": "string",
+					"title": "图片url",
+					"description": "图片文件信息，包括文件名、url等"
+				},
+				"target_url": {
+					"bsonType": "string",
+					"description": "点击跳转目标地址。如果是web地址则使用内置web-view打开；如果是本地页面则跳转本地页面；如果是schema地址则打开本地的app",
+					"title": "点击目标地址",
+					"format": "url",
+					"pattern": "^(http://|https://|/|./|@/)\\S",
+					"trim": "both"
+				},
+				"sort": {
+					"bsonType": "int",
+					"description": "数字越小，排序越前",
+					"title": "排序"
+				}
+			}
+		}
+	},
+	"bwin-category": {
+		"data": [{
+				"_id": {
+					"$oid": "62480ca9eb9d4c0001383909"
+				},
+				"page": "product",
+				"name": "产品分类一",
+				"sort": "1",
+				"_add_time": 1648889001189,
+				"_add_time_str": "2022-04-02 16:43:21",
+				"is_menu": true
+			},
+			{
+				"_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"page": "news",
+				"name": "新闻分类一",
+				"is_menu": true,
+				"sort": "1",
+				"_add_time": 1648892340899,
+				"_add_time_str": "2022-04-02 17:39:00"
+			},
+			{
+				"_id": {
+					"$oid": "624915770a84cf0001932e53"
+				},
+				"page": "product",
+				"name": "产品分类2",
+				"is_menu": true,
+				"sort": "2",
+				"_add_time": 1648956791679,
+				"_add_time_str": "2022-04-03 11:33:11"
+			},
+			{
+				"_id": {
+					"$oid": "6249ab6d4324b9000120790c"
+				},
+				"page": "news",
+				"name": "新闻分类二",
+				"_add_time": 1648995180952,
+				"_add_time_str": "2022-04-03 22:13:00"
+			}
+		],
+		"index": [{
+			"IndexName": "sort",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "sort",
+					"Direction": "-1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [],
+			"permission": {
+				"read": false,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"page": {
+					"bsonType": "array",
+					"description": "所属页面",
+					"enum": [{
+							"value": "product",
+							"text": "产品"
+						},
+						{
+							"value": "news",
+							"text": "新闻"
+						},
+						{
+							"value": "common",
+							"text": "通用"
+						}
+					]
+				},
+				"name": {
+					"bsonType": "string",
+					"description": "分类名"
+				},
+				"srot": {
+					"bsonType": "string",
+					"description": "排序"
+				},
+				"is_menu": {
+					"bsonType": "bool",
+					"description": "是否菜单"
+				}
+			}
+		}
+	},
+	"bwin-company": {
+		"data": [{
+			"_id": {
+				"$oid": "6248031c296d9e00018b0b13"
+			},
+			"name": "石家庄四季兴欣文化传媒有限公司",
+			"description": "公司成立于2018年，主要从事计算机软件外包服务，业务遍及房地产、机械、能源、畜牧、生物、医药、化工等。\n公司成立以来，一直本着开放包容、客户至上的原则，此前服务过的数十家企业，完成的百余个项目均得到了甲方的一致好评。\n公司未来将继续秉承企业宗旨，为甲方客户提供完善的一站式服务，为传统企业插上互联网的翅膀。",
+			"address": "河北省石家庄市长安区中山东路583号",
+			"latitude": 38.044266,
+			"longitude": 114.56427,
+			"tel": "400-888-8888",
+			"email": "bd@2bwin.cn",
+			"work_time": "11:00~21:00",
+			"_add_time": 1648886556728,
+			"_add_time_str": "2022-04-02 16:02:36",
+			"partner_description": "业务遍及房地产、机械、能源、畜牧、生物、医药、化工等",
+			"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/e73f29e9-3167-4135-9371-e336925e6693.jpg"
+		}],
+		"index": [{
+			"IndexName": "name",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "name",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"name",
+				"description",
+				"address",
+				"longitude",
+				"latitude",
+				"tel",
+				"email",
+				"work_time"
+			],
+			"permission": {
+				"read": true,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"name": {
+					"bsonType": "string",
+					"description": "企业名称"
+				},
+				"description": {
+					"bsonType": "string",
+					"description": "企业简介"
+				},
+				"partner_description": {
+					"bsonType": "string",
+					"description": "企业合伙伙伴简介"
+				},
+				"address": {
+					"bsonType": "string",
+					"description": "地址"
+				},
+				"longitude": {
+					"bsonType": "string",
+					"description": "经度"
+				},
+				"latitude": {
+					"bsonType": "string",
+					"description": "纬度"
+				},
+				"tel": {
+					"bsonType": "string",
+					"description": "联系电话"
+				},
+				"email": {
+					"bsonType": "string",
+					"description": "电子邮箱"
+				},
+				"work_time": {
+					"bsonType": "string",
+					"description": "工作时间"
+				}
+			}
+		}
+	},
+	"bwin-guestbook": {
+		"data": [{
+			"_id": {
+				"$oid": "624afe3aa6a7210001c6810e"
+			},
+			"relname": "赵凯",
+			"mobile": "18088888888",
+			"content": "网站设计的真漂亮",
+			"ip": "117.61.19.67",
+			"_add_time": 1649081914622,
+			"_add_time_str": "2022-04-04 22:18:34"
+		}],
+		"index": [{
+			"IndexName": "_add_time_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "_add_time",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"content"
+			],
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"relname": {
+					"bsonType": "string",
+					"description": "留言反馈用户姓名"
+				},
+				"mobile": {
+					"bsonType": "string",
+					"description": "留言反馈用户手机号"
+				},
+				"content": {
+					"bsonType": "string",
+					"description": "留言内容",
+					"trim": "right"
+				},
+				"ip": {
+					"bsonType": "string",
+					"description": "用户IP地址"
+				}
+			}
+		}
+	},
+	"bwin-index-data": {
+		"data": [{
+				"_id": {
+					"$oid": "6245cfa3321e1e0001864edb"
+				},
+				"main_num": "2018",
+				"unit": "年",
+				"description": "公司成立于",
+				"sort": "999",
+				"_add_time": 1648742307636,
+				"_add_time_str": "2022-03-31 23:58:27"
+			},
+			{
+				"_id": {
+					"$oid": "6245cfc42ee2ac0001642fbe"
+				},
+				"main_num": "10",
+				"unit": "余个",
+				"description": "服务国内一线房企",
+				"sort": "888",
+				"_add_time": 1648742340174,
+				"_add_time_str": "2022-03-31 23:59:00"
+			},
+			{
+				"_id": {
+					"$oid": "6245cfd72865b8000147692f"
+				},
+				"main_num": "80",
+				"unit": "余次",
+				"description": "完成委托外包服务",
+				"sort": "777",
+				"_add_time": 1648742359546,
+				"_add_time_str": "2022-03-31 23:59:19"
+			},
+			{
+				"_id": {
+					"$oid": "6245cfe28f614800012af358"
+				},
+				"main_num": "100",
+				"unit": "%",
+				"description": "客户满意度",
+				"sort": "666",
+				"_add_time": 1648742370776,
+				"_add_time_str": "2022-03-31 23:59:30"
+			},
+			{
+				"_id": {
+					"$oid": "6245cfef73e9270001c31a5b"
+				},
+				"main_num": "100",
+				"unit": "%",
+				"description": "项目完成率",
+				"sort": "555",
+				"_add_time": 1648742383024,
+				"_add_time_str": "2022-03-31 23:59:43"
+			}
+		],
+		"index": [{
+			"IndexName": "_add_time_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "_add_time",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"main_num",
+				"unit",
+				"description"
+			],
+			"permission": {
+				"read": true,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"main_num": {
+					"type": "int",
+					"description": "大数字"
+				},
+				"unit": {
+					"type": "string",
+					"description": "单位"
+				},
+				"description": {
+					"type": "string",
+					"description": "描述"
+				},
+				"sort": {
+					"type": "int",
+					"description": "排序"
+				}
+			}
+		}
+	},
+	"bwin-index-partner": {
+		"data": [{
+				"_id": {
+					"$oid": "6245d1fd3e80590001bb1eeb"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/8f529431-59dc-42fb-b141-d935605c9b3d.png",
+				"_add_time": 1648742909464,
+				"_add_time_str": "2022-04-01 00:08:29",
+				"partner_name": "越秀地产",
+				"sort": "1"
+			},
+			{
+				"_id": {
+					"$oid": "6245d23713d44f0001ca5f1f"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/62564743-8304-4eb8-8d28-c849045dc20b.png",
+				"partner_name": "远洋地产",
+				"sort": "2",
+				"_add_time": 1648742967316,
+				"_add_time_str": "2022-04-01 00:09:27"
+			},
+			{
+				"_id": {
+					"$oid": "6245d24044e29b0001700289"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/71ddcff5-d3cd-4b4c-bfb6-04ced137192b.png",
+				"partner_name": "恒大集团",
+				"sort": "3",
+				"_add_time": 1648742976880,
+				"_add_time_str": "2022-04-01 00:09:36"
+			},
+			{
+				"_id": {
+					"$oid": "6245d24c2865b800014786ff"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/cd7110a8-f09b-44d2-b126-bcf1cb62c026.png",
+				"partner_name": "万科",
+				"sort": "4",
+				"_add_time": 1648742988258,
+				"_add_time_str": "2022-04-01 00:09:48"
+			},
+			{
+				"_id": {
+					"$oid": "6245d256308aaf0001ee6613"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/0ac214b9-64bc-49f1-9ce3-fdbc89a797c9.png",
+				"partner_name": "佳兆业",
+				"sort": "5",
+				"_add_time": 1648742998523,
+				"_add_time_str": "2022-04-01 00:09:58"
+			},
+			{
+				"_id": {
+					"$oid": "6245d2628f614800012b118d"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/cf874d86-8352-4dcb-9519-d3884c3b1b54.png",
+				"partner_name": "光耀地产",
+				"sort": "6",
+				"_add_time": 1648743010284,
+				"_add_time_str": "2022-04-01 00:10:10"
+			},
+			{
+				"_id": {
+					"$oid": "6245d26f1a124e0001abe65e"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/eb8cb711-2778-43e6-9abc-d5dccaa18efc.png",
+				"partner_name": "万达集团",
+				"sort": "7",
+				"_add_time": 1648743023176,
+				"_add_time_str": "2022-04-01 00:10:23"
+			},
+			{
+				"_id": {
+					"$oid": "6245d27a308aaf0001ee6770"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/6759805b-b011-4cf5-9a24-4ad30da2c1e3.png",
+				"partner_name": "金地地产",
+				"sort": "8",
+				"_add_time": 1648743034890,
+				"_add_time_str": "2022-04-01 00:10:34"
+			},
+			{
+				"_id": {
+					"$oid": "6245d289cde794000137deff"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/fc9d0fda-f557-4ddf-9003-5da639a036c1.png",
+				"partner_name": "招商地产",
+				"sort": "9",
+				"_add_time": 1648743049072,
+				"_add_time_str": "2022-04-01 00:10:49"
+			},
+			{
+				"_id": {
+					"$oid": "6245d2ac44e29b00017006c7"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/bee3f9c2-ec26-414a-9638-5b55323ef636.png",
+				"partner_name": "华润地产",
+				"sort": "10",
+				"_add_time": 1648743084769,
+				"_add_time_str": "2022-04-01 00:11:24"
+			}
+		],
+		"index": [{
+			"IndexName": "_add_time_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "_add_time",
+					"Direction": "-1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [],
+			"permission": {
+				"read": false,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"partner_name": {
+					"type": "string",
+					"description": "伙伴名称"
+				},
+				"image_url": {
+					"type": "string",
+					"description": "图片地址"
+				},
+				"sort": {
+					"type": "string",
+					"description": "排序，数字越大越靠前"
+				}
+			}
+		}
+	},
+	"bwin-news": {
+		"data": [{
+				"_id": {
+					"$oid": "624823d1186bfc000174d07e"
+				},
+				"title": "必闻品牌官网即将发布",
+				"des": "必闻品牌官网是我司在uniCloud的基础上打造的云端一体企业官网，底层基于uni-app，除PC/手机浏览器自适应外，还可快速打包至小程序、app等多端。即将发布，敬请期待。",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/14dc6219-b37f-4674-bd82-741d97dbb79d.png",
+				"is_top": 1,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648894929816,
+				"_add_time_str": "2022-04-02 18:22:09",
+				"read_num": 20
+			},
+			{
+				"_id": {
+					"$oid": "6249ac285e2c57000147c2e3"
+				},
+				"title": "测试新闻样式1",
+				"des": "测试新闻样式5，这是一段新闻摘要，可以在创建新闻时添加，如果不添加，会显得比较空。",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/4d4c1c5b-a88a-4565-b54f-4bb1fb9c4518.png",
+				"is_top": 0,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648995368092,
+				"_add_time_str": "2022-04-03 22:16:08",
+				"read_num": 4
+			},
+			{
+				"_id": {
+					"$oid": "6249ac36611ce50001f8b43e"
+				},
+				"title": "测试新闻样式2",
+				"des": "测试新闻样式5，这是一段新闻摘要，可以在创建新闻时添加，如果不添加，会显得比较空。",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/f1a4eba3-18e1-4881-875d-72eeef196bd3.png",
+				"is_top": 0,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648995382204,
+				"_add_time_str": "2022-04-03 22:16:22",
+				"read_num": 3
+			},
+			{
+				"_id": {
+					"$oid": "6249ac44b6fe290001aae653"
+				},
+				"title": "测试新闻样式3",
+				"des": "测试新闻样式3",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/2bbd4a26-a54b-49da-ba68-bbcc8fa77ec2.png",
+				"is_top": 0,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648995396550,
+				"_add_time_str": "2022-04-03 22:16:36",
+				"read_num": 1
+			},
+			{
+				"_id": {
+					"$oid": "6249ac508d55d00001ecd945"
+				},
+				"title": "测试新闻样式4",
+				"des": "测试新闻样式5，这是一段新闻摘要，可以在创建新闻时添加，如果不添加，会显得比较空。",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/feb89a2e-76f5-4177-8d11-7a3955b48046.png",
+				"is_top": 0,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648995408386,
+				"_add_time_str": "2022-04-03 22:16:48",
+				"read_num": 3
+			},
+			{
+				"_id": {
+					"$oid": "6249ac5d296d9e0001b83d53"
+				},
+				"title": "测试新闻样式5",
+				"des": "测试新闻样式5，这是一段新闻摘要，可以在创建新闻时添加，如果不添加，会显得比较空。",
+				"category_id": {
+					"$oid": "624819b40a84cf00017b8611"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/6220945b-1619-4e64-aa4e-856f0c189cff.png",
+				"is_top": 0,
+				"content": "<ul data-checked=\"false\"><li>内容无实际意义</li><li>只为展示富文本能力</li></ul><p><br></p><p><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1750f741-e794-4d58-a706-654ab541c968.png\"></p><p><strong style=\"background-color: rgb(255, 255, 0);\">内容无实际意义</strong></p><p><strong style=\"background-color: rgb(255, 255, 0);\">只为展示富文本能力</strong></p><p><br></p><p><s style=\"font-family: Pacifico;\">内容无实际意义</s></p><h2 style=\"text-align: center;\"><u>只为展示富文本能力</u></h2><p><br></p><p style=\"text-align: right;\"><img src=\"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/5817407d-5811-41d2-a1c6-0d2a5d021911.png\" alt=\"image\" width=\"294\" class=\"vk-data-editor-image\"></p><p><br></p><ol><li><em>内容无实际意义</em></li><li><em>只为展示富文本能力</em></li></ol><p><br></p><p><br></p><p style=\"text-align: center;\"><strong>内容无实际意义</strong></p><p style=\"text-align: center;\"><strong>只为展示富文本能力</strong></p><p><br></p><ul><li><span style=\"color: rgb(240, 102, 102);\">内容无实际意义</span></li><li><span style=\"color: rgb(240, 102, 102);\">只为展示富文本能力</span></li></ul><p class=\"ql-indent-1\"><br></p><p class=\"ql-indent-1\">内容无实际意义</p><p class=\"ql-indent-1\">只为展示富文本能力</p>",
+				"_add_time": 1648995421190,
+				"_add_time_str": "2022-04-03 22:17:01",
+				"read_num": 32
+			}
+		],
+		"index": [{
+				"IndexName": "_add_time_",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "title",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "title",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"user_id",
+				"title",
+				"content"
+			],
+			"permission": {},
+			"properties": {
+				"_id": {
+					"description": "存储文档 ID（用户 ID），系统自动生成"
+				},
+				"user_id": {
+					"bsonType": "string",
+					"description": "文章作者ID， 参考`uni-id-users` 表",
+					"foreignKey": "uni-id-users._id",
+					"defaultValue": {
+						"$env": "uid"
+					}
+				},
+				"category_id": {
+					"bsonType": "string",
+					"title": "分类",
+					"description": "分类 id，参考`bwin-category`表",
+					"foreignKey": "bwin-category._id",
+					"enum": {
+						"collection": "bwin-category",
+						"field": "name as text, _id as value"
+					}
+				},
+				"title": {
+					"bsonType": "string",
+					"title": "标题",
+					"description": "标题",
+					"label": "标题",
+					"trim": "both"
+				},
+				"content": {
+					"bsonType": "string",
+					"title": "文章内容",
+					"description": "文章内容",
+					"label": "文章内容",
+					"trim": "right"
+				},
+				"des": {
+					"bsonType": "string",
+					"title": "文章摘录",
+					"description": "文章摘录",
+					"label": "摘要",
+					"trim": "both"
+				},
+				"is_top": {
+					"bsonType": "int",
+					"title": "是否置顶",
+					"description": "是否置顶"
+				},
+				"cover_image": {
+					"bsonType": "string",
+					"title": "封面图",
+					"description": "缩略图地址",
+					"label": "封面大图",
+					"trim": "both"
+				},
+				"read_num": {
+					"bsonType": "int",
+					"description": "阅读量"
+				}
+			}
+		}
+	},
+	"bwin-page-header": {
+		"data": [{
+				"_id": {
+					"$oid": "6245dd5080864b000179bdd6"
+				},
+				"page": "product",
+				"main_title": "Product",
+				"sub_title": "创新研发 品质至上",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/a12e7310-b4c5-4c28-8557-c6a68623703e.jpg",
+				"is_immersive": true,
+				"_add_time": 1648745808238,
+				"_add_time_str": "2022-04-01 00:56:48"
+			},
+			{
+				"_id": {
+					"$oid": "624804378d55d00001bf9b48"
+				},
+				"page": "news",
+				"main_title": "News",
+				"sub_title": "洞悉行业潮流 分享企业动态",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/a3b76d10-8d5e-440d-b194-3c5e09623316.jpg",
+				"is_immersive": false,
+				"_add_time": 1648886838991,
+				"_add_time_str": "2022-04-02 16:07:18"
+			},
+			{
+				"_id": {
+					"$oid": "624804ba9a3d140001640a15"
+				},
+				"page": "about",
+				"main_title": "About",
+				"sub_title": "专注计算机软件外包开发服务",
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/25596ed4-cf17-4c14-90b5-c3f4b311aeab.jpg",
+				"is_immersive": false,
+				"_add_time": 1648886970494,
+				"_add_time_str": "2022-04-02 16:09:30"
+			}
+		],
+		"index": [{
+			"IndexName": "page",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "page",
+					"Direction": "-1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"page",
+				"main_title",
+				"sub_title",
+				"image_url"
+			],
+			"permission": {
+				"read": true,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"page": {
+					"bsonType": "array",
+					"description": "所属页面",
+					"enum": [{
+							"value": "product",
+							"text": "产品中心"
+						},
+						{
+							"value": "news",
+							"text": "新闻中心"
+						},
+						{
+							"value": "honor",
+							"text": "荣誉资质"
+						},
+						{
+							"value": "about",
+							"text": "关于我们"
+						},
+						{
+							"value": "common",
+							"text": "通用"
+						}
+					]
+				},
+				"main_title": {
+					"bsonType": "text",
+					"description": "头图主标题"
+				},
+				"sub_title": {
+					"bsonType": "text",
+					"description": "头图副标题"
+				},
+				"image_url": {
+					"bsonType": "text",
+					"description": "头图链接"
+				},
+				"is_immersive": {
+					"bsonType": "bool",
+					"description": "沉浸式导航栏"
+				}
+			}
+		}
+	},
+	"bwin-product": {
+		"data": [{
+				"_id": {
+					"$oid": "62487650eb124700015bb176"
+				},
+				"category_id": {
+					"$oid": "62480ca9eb9d4c0001383909"
+				},
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/edbcb4bb-5015-494e-b49b-2072803cf792.png",
+				"is_top": 1,
+				"content": "必闻品牌官网是我司在uniCloud的基础上打造的云端一体企业官网，底层基于uni-app，除PC/手机浏览器自适应外，还可快速打包至小程序、app等多端。",
+				"_add_time": 1648916048473,
+				"_add_time_str": "2022-04-03 00:14:08",
+				"function_des": "<p>必闻品牌官网是我司在uniCloud的基础上打造的云端一体企业官网，底层基于uni-app，除PC/手机浏览器自适应外，还可快速打包至小程序、app等多端。</p>",
+				"keywords": "uniCloud云端一体",
+				"name": "必闻品牌官网",
+				"other_des": "<p>必闻品牌官网是我司在uniCloud的基础上打造的云端一体企业官网，底层基于uni-app，除PC/手机浏览器自适应外，还可快速打包至小程序、app等多端。</p>",
+				"status": true,
+				"swiper_list": [
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/a471354e-df12-417d-bcb5-1017e89cf90f.png",
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/65669b11-cd9a-41e3-aa1d-af624698d54d.png"
+				],
+				"tech_des": "<p>必闻品牌官网是我司在uniCloud的基础上打造的云端一体企业官网，底层基于uni-app，除PC/手机浏览器自适应外，还可快速打包至小程序、app等多端。</p>",
+				"read_num": 2
+			},
+			{
+				"_id": {
+					"$oid": "624996f68d55d00001eb1195"
+				},
+				"name": "产品样式测试1",
+				"keywords": "产品样式测试1",
+				"content": "产品样式测试1",
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/dbb3b6d9-b899-41a1-90e0-4e75ea468753.png",
+				"swiper_list": [
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/9abe914a-87bc-4ca6-842a-453515b0657d.png"
+				],
+				"category_id": {
+					"$oid": "62480ca9eb9d4c0001383909"
+				},
+				"function_des": "<p>产品样式测试1</p>",
+				"tech_des": "<p>产品样式测试1</p>",
+				"other_des": "<p>产品样式测试1</p>",
+				"is_top": 0,
+				"status": true,
+				"_add_time": 1648989942158,
+				"_add_time_str": "2022-04-03 20:45:42",
+				"read_num": 0
+			},
+			{
+				"_id": {
+					"$oid": "6249a90fcdf479000135270b"
+				},
+				"name": "产品样式测试2",
+				"keywords": "产品样式测试2",
+				"content": "产品样式测试2",
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/a301caf8-7acd-41eb-a012-916f19ed2195.png",
+				"swiper_list": [
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/987b3d46-d774-4f1e-97ac-1d3f55899090.png"
+				],
+				"category_id": {
+					"$oid": "624915770a84cf0001932e53"
+				},
+				"function_des": "<p>产品样式测试2</p>",
+				"tech_des": "<p>产品样式测试2</p>",
+				"other_des": "<p>产品样式测试2</p>",
+				"is_top": 0,
+				"status": true,
+				"_add_time": 1648994575347,
+				"_add_time_str": "2022-04-03 22:02:55",
+				"read_num": 0
+			},
+			{
+				"_id": {
+					"$oid": "6249ab2e77a7c60001d1d1ba"
+				},
+				"name": "产品样式测试3",
+				"keywords": "产品样式测试3",
+				"content": "产品样式测试3",
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/791de3f8-d17b-4260-9d64-bb9d6afaf552.png",
+				"swiper_list": [
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/0c47334a-1766-4471-8862-c09d06e0ad35.png"
+				],
+				"category_id": {
+					"$oid": "62480ca9eb9d4c0001383909"
+				},
+				"function_des": "<p>产品样式测试3</p>",
+				"tech_des": "<p>产品样式测试3</p>",
+				"other_des": "<p>产品样式测试3</p>",
+				"is_top": 0,
+				"status": true,
+				"_add_time": 1648995118520,
+				"_add_time_str": "2022-04-03 22:11:58",
+				"read_num": 1
+			},
+			{
+				"_id": {
+					"$oid": "6249ab41a6a7210001a2128b"
+				},
+				"name": "产品样式测试4",
+				"keywords": "产品样式测试4",
+				"content": "产品样式测试4",
+				"cover_image": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/fe1cafcb-e948-4d85-afe7-effe71383918.png",
+				"swiper_list": [
+					"https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/668f8b03-52ff-4273-8a0c-5e3e77635e7a.png"
+				],
+				"category_id": {
+					"$oid": "624915770a84cf0001932e53"
+				},
+				"function_des": "<p>产品样式测试4</p>",
+				"tech_des": "<p>产品样式测试4</p>",
+				"other_des": "<p>产品样式测试4</p>",
+				"is_top": 0,
+				"status": true,
+				"_add_time": 1648995137260,
+				"_add_time_str": "2022-04-03 22:12:17",
+				"read_num": 0
+			}
+		],
+		"index": [{
+			"IndexName": "sort",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "sort",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"permission": {
+				"create": false,
+				"delete": false,
+				"read": "doc.status == true",
+				"update": false
+			},
+			"properties": {
+				"_id": {
+					"description": "存储文档 ID（商品 ID），系统自动生成"
+				},
+				"name": {
+					"bsonType": "string",
+					"description": "商品名称",
+					"title": "名称",
+					"trim": "both"
+				},
+				"category_id": {
+					"bsonType": "string",
+					"description": "分类 id，参考`bwin-category._id`表",
+					"foreignKey": "bwin-category._id"
+				},
+				"keywords": {
+					"bsonType": "string",
+					"description": "关键词",
+					"title": "商品关键词描述",
+					"trim": "both"
+				},
+				"content": {
+					"bsonType": "string",
+					"description": "详细描述",
+					"title": "详细描述",
+					"trim": "both"
+				},
+				"cover_image": {
+					"bsonType": "string",
+					"description": "商品封面图，用于在列表或搜索结果中预览显示",
+					"title": "封面图地址",
+					"trim": "both"
+				},
+				"swiper_list": {
+					"bsonType": "array",
+					"description": "商品详情页的banner图地址"
+				},
+				"status": {
+					"bsonType": "bool",
+					"description": "是否显示"
+				},
+				"is_top": {
+					"bsonType": "int",
+					"description": "是否置顶"
+				},
+				"function_des": {
+					"bsonType": "string",
+					"description": "功能描述",
+					"title": "功能描述",
+					"trim": "both"
+				},
+				"tech_des": {
+					"bsonType": "string",
+					"description": "技术描述",
+					"title": "技术描述",
+					"trim": "both"
+				},
+				"other_des": {
+					"bsonType": "string",
+					"description": "其他补充描述",
+					"title": "其他补充描述",
+					"trim": "both"
+				},
+				"read_num": {
+					"bsonType": "int",
+					"description": "阅读量"
+				}
+			}
+		}
+	},
+	"bwin-swiper": {
+		"data": [{
+				"_id": {
+					"$oid": "6245c1db3e80590001ba8a18"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/d8fbf8da-226e-4b56-a0a7-94b50420e602.png",
+				"target_url": "/pages/product/detail?id=62487650eb124700015bb176",
+				"sort": "888",
+				"status": true,
+				"_add_time": 1648738779303,
+				"_add_time_str": "2022-03-31 22:59:39"
+			},
+			{
+				"_id": {
+					"$oid": "6245c33e6764c00001efd006"
+				},
+				"image_url": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/0b98fcae-0634-4a8e-91a5-ea036e0176c1.png",
+				"target_url": "https://dcloud.io/",
+				"sort": "999",
+				"status": true,
+				"_add_time": 1648739134122,
+				"_add_time_str": "2022-03-31 23:05:34"
+			}
+		],
+		"index": [{
+				"IndexName": "sort_",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "status_",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "status",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "category_id_",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "category_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"bannerfile"
+			],
+			"permission": {
+				"read": true
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"image_url": {
+					"bsonType": "string",
+					"title": "图片url",
+					"description": "图片文件信息，包括文件名、url等"
+				},
+				"target_url": {
+					"bsonType": "string",
+					"description": "点击跳转目标地址。如果是web地址则使用内置web-view打开；如果是本地页面则跳转本地页面；如果是schema地址则打开本地的app",
+					"title": "点击目标地址",
+					"format": "url",
+					"pattern": "^(http://|https://|/|./|@/)\\S",
+					"trim": "both"
+				},
+				"sort": {
+					"bsonType": "int",
+					"description": "数字越大，排序越前",
+					"title": "排序"
+				},
+				"status": {
+					"bsonType": "bool",
+					"defaultValue": true,
+					"title": "生效状态"
+				}
+			}
+		}
+	},
+	"bwin-website": {
+		"data": [{
+			"_id": {
+				"$oid": "6247f4938d55d00001bdb649"
+			},
+			"logo1": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/e60d20ac-bb1b-46cc-be01-9bddbb775c87.png",
+			"logo2": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-613ff9e2-568b-4845-987f-93626e21bcde/1f05ca7e-a916-4875-aa10-51cff2e499a4.png",
+			"icp_code": "冀ICP备16021668号-3",
+			"copyright": "© 2018-2022 必闻品牌官网 版权所有",
+			"cache_time": "24",
+			"use_skeleton": true,
+			"use_email": false,
+			"_add_time": 1648882835068,
+			"_add_time_str": "2022-04-02 15:00:35"
+		}],
+		"index": [{
+			"IndexName": "icp_code_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "icp_code",
+					"Direction": "-1"
+				}],
+				"MgoIsUnique": false
+			}
+		}],
+		"schema": {
+			"bsonType": "object",
+			"required": [
+				"logo1",
+				"logo2",
+				"icp_code",
+				"cache_time"
+			],
+			"permission": {
+				"read": true,
+				"create": false,
+				"update": false,
+				"delete": false
+			},
+			"properties": {
+				"_id": {
+					"description": "ID，系统自动生成"
+				},
+				"logo1": {
+					"bsonType": "string",
+					"description": "文件，正方形logo"
+				},
+				"logo2": {
+					"bsonType": "string",
+					"description": "文件，长方形logo"
+				},
+				"icp_code": {
+					"bsonType": "string",
+					"description": "ICP备案号"
+				},
+				"police_code": {
+					"bsonType": "string",
+					"description": "公安网备案号"
+				},
+				"copyright": {
+					"bsonType": "string",
+					"description": "底部版权信息"
+				},
+				"cache_time": {
+					"bsonType": "int",
+					"description": "全站数据缓存时间"
+				}
+			}
+		}
+	},
+
+
+	"vk-test": {
+		"data": [
+
+		],
+		"index": [{
+				"IndexName": "location",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "location",
+						"Direction": "2dsphere"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"uni-id-users": {
+		"data": [{
+			"_id": "001",
+			"username": "admin",
+			"password": "03caebb36670995fc261a275d212cad65e4bbebd",
+			"register_date": 1596416400000,
+			"register_ip": "127.0.0.1",
+			"nickname": "超级管理员",
+			"role": ["admin"],
+			"token": [],
+			"allow_login_background": true
+		}],
+		"index": [{
+				"IndexName": "username",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "username",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "mobile",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "mobile",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "email",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "email",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "wx_openid.app-plus",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "wx_openid.app-plus",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "wx_openid.mp-weixin",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "wx_openid.mp-weixin",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "wx_unionid",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "wx_unionid",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "ali_openid",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "ali_openid",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "my_invite_code",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "my_invite_code",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "inviter_uid",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "inviter_uid",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "invite_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "invite_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "role",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "role",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "register_date",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "register_date",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"opendb-verify-codes": {
+		"data": [],
+		"index": [{
+				"IndexName": "mobile",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "mobile",
+						"Direction": "1"
+					}, {
+						"Name": "code",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "email",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "email",
+						"Direction": "1"
+					}, {
+						"Name": "code",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "type",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "type",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "state",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "state",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"uni-id-log": {
+		"data": [],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "user_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "user_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"uni-id-roles": {
+		"data": [{
+			"_id": "001",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"role_id": "admin",
+			"role_name": "超级管理员",
+			"comment": "系统内置角色 - 请勿修改",
+			"permission": []
+		}],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "role_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "role_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "permission",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "permission",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "role_name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "role_name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"uni-id-permissions": {
+		"data": [{
+				"_id": "sys-permission",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-permission",
+				"permission_name": "系统内置权限",
+				"comment": "系统内置权限",
+				"url": "",
+				"sort": 1,
+				"enable": true
+			},
+			{
+				"_id": "sys-permission-add",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-permission-add",
+				"permission_name": "系统内置 - 增",
+				"comment": "所有函数名以add开头的云函数",
+				"url": ["*/add*"],
+				"icon": "vk-icon-add",
+				"sort": 1,
+				"parent_id": "sys-permission",
+				"enable": true,
+				"match_mode": 1,
+				"curd_category": 1,
+				"level": 3
+			},
+			{
+				"_id": "sys-permission-delete",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-permission-delete",
+				"permission_name": "系统内置 - 删",
+				"comment": "所有函数名以delete开头的云函数",
+				"url": ["*/delete*"],
+				"icon": "vk-icon-delete",
+				"sort": 2,
+				"parent_id": "sys-permission",
+				"enable": true,
+				"match_mode": 1,
+				"curd_category": 2,
+				"level": 4
+			},
+			{
+				"_id": "sys-permission-update",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-permission-update",
+				"permission_name": "系统内置 - 改",
+				"comment": "所有函数名以update开头的云函数",
+				"url": ["*/update*"],
+				"icon": "el-icon-edit",
+				"sort": 3,
+				"parent_id": "sys-permission",
+				"enable": true,
+				"match_mode": 1,
+				"curd_category": 3,
+				"level": 3
+			},
+			{
+				"_id": "sys-permission-read",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-permission-read",
+				"permission_name": "系统内置 - 查",
+				"comment": "包含所有的查询操作",
+				"url": ["*/get*", "*/find*", "*/select*"],
+				"icon": "vk-icon-text",
+				"sort": 4,
+				"parent_id": "sys-permission",
+				"enable": true,
+				"match_mode": 1,
+				"curd_category": 4,
+				"level": 3
+			},
+			{
+				"_id": "sys-manage",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage",
+				"permission_name": "用户角色权限菜单",
+				"comment": "",
+				"sort": 2,
+				"enable": true
+			},
+			{
+				"_id": "sys-manage-user",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage-user",
+				"permission_name": "系统 - 用户管理",
+				"comment": "",
+				"url": ["admin/system/user/sys/*"],
+				"sort": 1,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "sys-manage"
+			},
+			{
+				"_id": "sys-manage-role",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage-role",
+				"permission_name": "系统 - 角色管理",
+				"comment": "",
+				"url": ["admin/system/role/sys/*"],
+				"sort": 2,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "sys-manage"
+			},
+			{
+				"_id": "sys-manage-permission",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage-permission",
+				"permission_name": "系统 - 权限管理",
+				"comment": "",
+				"url": ["admin/system/permission/sys/*"],
+				"sort": 3,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "sys-manage"
+			},
+			{
+				"_id": "sys-manage-menu",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage-menu",
+				"permission_name": "系统 - 菜单管理",
+				"comment": "",
+				"url": ["admin/system/menu/sys/*"],
+				"sort": 4,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "sys-manage"
+			},
+			{
+				"_id": "sys-manage-app",
+				"_add_time": 1596416400000,
+				"permission_id": "sys-manage-app",
+				"permission_name": "系统 - 应用管理",
+				"comment": "",
+				"url": ["admin/system/app/sys/*"],
+				"sort": 5,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "sys-manage"
+			},
+			{
+				"_id": "system-uni",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni",
+				"permission_name": "系统设置",
+				"comment": "",
+				"sort": 3,
+				"enable": true
+			},
+			{
+				"_id": "system-uni-uni-id-files",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni-uni-id-files",
+				"permission_name": "系统 - 素材管理",
+				"comment": "",
+				"url": ["admin/system_uni/uni-id-files/*"],
+				"sort": 1,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "system-uni"
+			},
+			{
+				"_id": "system-uni-vk-global-data",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni-vk-global-data",
+				"permission_name": "系统 - 缓存管理",
+				"comment": "",
+				"url": ["admin/system_uni/global-data/sys/*"],
+				"sort": 2,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "system-uni"
+			},
+			{
+				"_id": "system-uni-vk-components-dynamic",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni-vk-components-dynamic",
+				"permission_name": "系统 - 动态组件数据管理",
+				"comment": "",
+				"url": ["admin/system_uni/components-dynamic/sys/*"],
+				"sort": 3,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "system-uni"
+			},
+			{
+				"_id": "system-uni-uni-id-log",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni-uni-id-log",
+				"permission_name": "系统 - 用户登录日志管理",
+				"comment": "",
+				"url": ["admin/system_uni/uni-id-log/sys/*"],
+				"sort": 4,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "system-uni"
+			},
+			{
+				"_id": "system-uni-opendb-admin-log",
+				"_add_time": 1596416400000,
+				"permission_id": "system-uni-opendb-admin-log",
+				"permission_name": "系统 - 操作日志管理",
+				"comment": "",
+				"url": ["admin/system_uni/admin-log/sys/*"],
+				"sort": 5,
+				"enable": true,
+				"match_mode": 1,
+				"parent_id": "system-uni"
+			}
+		],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "permission_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "permission_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "parent_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "parent_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "url",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "url",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "sort",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"opendb-admin-menus": {
+		"data": [{
+			"_id": "system-uni-opendb-admin-log",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "",
+			"menu_id": "system-uni-opendb-admin-log",
+			"name": "系统操作日志",
+			"parent_id": "system-uni",
+			"sort": 9,
+			"url": "/pages_plugs/system_uni/opendb-admin-log"
+		}, {
+			"_id": "sys-app-manage",
+			"_add_time": 1596416400000,
+			"comment": "应用管理",
+			"enable": true,
+			"icon": "el-icon-cloudy",
+			"menu_id": "sys-app-manage",
+			"name": "应用管理",
+			"parent_id": "sys-admin",
+			"sort": 5,
+			"url": "/pages_plugs/system/app/list"
+		}, {
+			"_id": "system-uni-vk-components-dynamic",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "",
+			"menu_id": "system-uni-vk-components-dynamic",
+			"name": "动态组件数据",
+			"parent_id": "system-uni",
+			"sort": 3,
+			"url": "/pages_plugs/system_uni/vk-components-dynamic"
+		}, {
+			"_id": "system-uni",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "el-icon-s-tools",
+			"menu_id": "system-uni",
+			"name": "系统设置",
+			"sort": 110
+		}, {
+			"_id": "sys-role-manage",
+			"_add_time": 1596416400000,
+			"comment": "1个角色可以分配多个权限和菜单",
+			"enable": true,
+			"icon": "el-icon-user",
+			"menu_id": "sys-role-manage",
+			"name": "角色管理",
+			"parent_id": "sys-admin",
+			"sort": 2,
+			"url": "/pages_plugs/system/role/list"
+		}, {
+			"_id": "system-uni-vk-global-data",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "",
+			"menu_id": "system-uni-vk-global-data",
+			"name": "系统缓存管理",
+			"parent_id": "system-uni",
+			"sort": 2,
+			"url": "/pages_plugs/system_uni/vk-global-data"
+		}, {
+			"_id": "system-uni-uni-id-log",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "",
+			"menu_id": "system-uni-uni-id-log",
+			"name": "用户登录日志",
+			"parent_id": "system-uni",
+			"sort": 8,
+			"url": "/pages_plugs/system_uni/uni-id-log"
+		}, {
+			"_id": "sys-user-manage",
+			"_add_time": 1596416400000,
+			"comment": "1个角色可以分配多个角色",
+			"enable": true,
+			"icon": "el-icon-s-custom",
+			"menu_id": "sys-user-manage",
+			"name": "用户管理",
+			"parent_id": "sys-admin",
+			"sort": 1,
+			"url": "/pages_plugs/system/user/list"
+		}, {
+			"_id": "sys-admin",
+			"_add_time": 1596416400000,
+			"comment": "系统内置",
+			"enable": true,
+			"icon": "el-icon-s-tools",
+			"menu_id": "sys-admin",
+			"name": "用户角色权限",
+			"sort": 100,
+			"url": ""
+		}, {
+			"_id": "sys-permission-manage",
+			"_add_time": 1596416400000,
+			"comment": "1个权限可以匹配多个云函数",
+			"enable": true,
+			"icon": "vk-icon-lock",
+			"menu_id": "sys-permission-manage",
+			"name": "权限管理",
+			"parent_id": "sys-admin",
+			"sort": 3,
+			"url": "/pages_plugs/system/permission/list"
+		}, {
+			"_id": "sys-menus-manage",
+			"_add_time": 1596416400000,
+			"comment": "控制admin左侧菜单的显示和隐藏",
+			"enable": true,
+			"icon": "el-icon-tickets",
+			"menu_id": "sys-menus-manage",
+			"name": "菜单管理",
+			"parent_id": "sys-admin",
+			"sort": 4,
+			"url": "/pages_plugs/system/menu/list"
+		}, {
+			"_id": "system-uni-uni-id-files",
+			"_add_time": 1596416400000,
+			"enable": true,
+			"icon": "el-icon-folder-opened",
+			"menu_id": "system-uni-uni-id-files",
+			"name": "素材管理",
+			"parent_id": "system-uni",
+			"sort": 1,
+			"url": "/pages_plugs/system_uni/uni-id-files/list"
+		}, {
+			"_id": {
+				"$oid": "624480f0cde7940001175db4"
+			},
+			"menu_id": "bwin-website",
+			"name": "站点配置",
+			"url": "/pages/bwin/website",
+			"icon": "vk-icon-home_fill_light",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648656624278,
+			"_add_time_str": "2022-03-31 00:10:24"
+		}, {
+			"_id": {
+				"$oid": "624481cfa91c42000177759e"
+			},
+			"menu_id": "bwin-company-info",
+			"name": "企业信息",
+			"url": "/pages/bwin/company",
+			"icon": "el-icon-info",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648656847546,
+			"_add_time_str": "2022-03-31 00:14:07"
+		}, {
+			"_id": {
+				"$oid": "6244822b2865b80001273b9a"
+			},
+			"menu_id": "bwin-pages",
+			"name": "页面配置",
+			"url": "",
+			"icon": "vk-icon-paintfill",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648656939770,
+			"_add_time_str": "2022-03-31 00:15:39"
+		}, {
+			"_id": {
+				"$oid": "62448251f58fd50001cc21d7"
+			},
+			"menu_id": "bwin-pages-index",
+			"name": "首页",
+			"url": "",
+			"icon": "el-icon-s-home",
+			"sort": 0,
+			"parent_id": "bwin-pages",
+			"enable": true,
+			"_add_time": 1648656978079,
+			"_add_time_str": "2022-03-31 00:16:18"
+		}, {
+			"_id": {
+				"$oid": "6244827c2ee2ac00014402c7"
+			},
+			"menu_id": "bwin-pages-product",
+			"name": "产品中心",
+			"url": "/pages/bwin/page/product",
+			"icon": "el-icon-s-goods",
+			"sort": 0,
+			"parent_id": "bwin-pages",
+			"enable": true,
+			"_add_time": 1648657020222,
+			"_add_time_str": "2022-03-31 00:17:00"
+		}, {
+			"_id": {
+				"$oid": "6244829644e29b00014fadac"
+			},
+			"menu_id": "bwin-pages-news",
+			"name": "新闻中心",
+			"url": "/pages/bwin/page/news",
+			"icon": "vk-icon-newsfill",
+			"sort": 0,
+			"parent_id": "bwin-pages",
+			"enable": true,
+			"_add_time": 1648657047055,
+			"_add_time_str": "2022-03-31 00:17:27"
+		}, {
+			"_id": {
+				"$oid": "624482ba3261f1000191c119"
+			},
+			"menu_id": "bwin-pages-about",
+			"name": "关于我们",
+			"url": "/pages/bwin/page/about",
+			"icon": "el-icon-question",
+			"sort": 0,
+			"parent_id": "bwin-pages",
+			"enable": true,
+			"_add_time": 1648657083076,
+			"_add_time_str": "2022-03-31 00:18:03"
+		}, {
+			"_id": {
+				"$oid": "624482fc2ee2ac00014406e9"
+			},
+			"menu_id": "bwin-pages-honor",
+			"name": "企业荣誉",
+			"url": "/pages/bwin/page/honor",
+			"icon": "el-icon-trophy",
+			"sort": 0,
+			"parent_id": "bwin-pages",
+			"enable": true,
+			"_add_time": 1648657148373,
+			"_add_time_str": "2022-03-31 00:19:08"
+		}, {
+			"_id": {
+				"$oid": "6244832344870800018f4461"
+			},
+			"menu_id": "bwin-product",
+			"name": "产品管理",
+			"url": "",
+			"icon": "el-icon-s-goods",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648657187621,
+			"_add_time_str": "2022-03-31 00:19:47"
+		}, {
+			"_id": {
+				"$oid": "6244836b8f614800010ace25"
+			},
+			"menu_id": "bwin-product-list",
+			"name": "产品列表",
+			"url": "/pages/bwin/product/list",
+			"icon": "vk-icon-sort",
+			"sort": 1,
+			"parent_id": "bwin-product",
+			"enable": true,
+			"_add_time": 1648657259154,
+			"_add_time_str": "2022-03-31 00:20:59"
+		}, {
+			"_id": {
+				"$oid": "6244838673e9270001a30094"
+			},
+			"menu_id": "bwin-news",
+			"name": "新闻管理",
+			"url": "",
+			"icon": "vk-icon-newsfill",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648657286168,
+			"_add_time_str": "2022-03-31 00:21:26"
+		}, {
+			"_id": {
+				"$oid": "624483ac3261f1000191c8e8"
+			},
+			"menu_id": "bwin-news-category",
+			"name": "分类管理",
+			"url": "/pages/bwin/news/category",
+			"icon": "vk-icon-list",
+			"sort": 0,
+			"parent_id": "bwin-news",
+			"enable": true,
+			"_add_time": 1648657324111,
+			"_add_time_str": "2022-03-31 00:22:04"
+		}, {
+			"_id": {
+				"$oid": "624483c92ee2ac0001440d45"
+			},
+			"menu_id": "bwin-news-list",
+			"name": "新闻列表",
+			"url": "/pages/bwin/news/list",
+			"icon": "vk-icon-sort",
+			"sort": 0,
+			"parent_id": "bwin-news",
+			"enable": true,
+			"_add_time": 1648657353886,
+			"_add_time_str": "2022-03-31 00:22:33"
+		}, {
+			"_id": {
+				"$oid": "624483ebf58fd50001cc2ebe"
+			},
+			"menu_id": "bwin-guestbook",
+			"name": "留言管理",
+			"url": "/pages/bwin/guestbook/list",
+			"icon": "el-icon-notebook-2",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648657387303,
+			"_add_time_str": "2022-03-31 00:23:07"
+		}, {
+			"_id": {
+				"$oid": "6245ccff321e1e0001863b9d"
+			},
+			"menu_id": "bwin-page-index-swiper",
+			"name": "轮播图管理",
+			"url": "/pages/bwin/page/index/swiper",
+			"icon": "vk-icon-album",
+			"sort": 0,
+			"parent_id": "bwin-pages-index",
+			"enable": true,
+			"_add_time": 1648741631503,
+			"_add_time_str": "2022-03-31 23:47:11"
+		}, {
+			"_id": {
+				"$oid": "6245cd842ee2ac0001641ead"
+			},
+			"menu_id": "bwin-page-index-data",
+			"name": "数据项管理",
+			"url": "/pages/bwin/page/index/data",
+			"icon": "el-icon-data-analysis",
+			"sort": 0,
+			"parent_id": "bwin-pages-index",
+			"enable": true,
+			"_add_time": 1648741764936,
+			"_add_time_str": "2022-03-31 23:49:24"
+		}, {
+			"_id": {
+				"$oid": "6245cdcc4487080001af5500"
+			},
+			"menu_id": "bwin-page-index-partner",
+			"name": "合作伙伴管理",
+			"url": "/pages/bwin/page/index/partner",
+			"icon": "vk-icon-album",
+			"sort": 0,
+			"parent_id": "bwin-pages-index",
+			"enable": true,
+			"_add_time": 1648741836578,
+			"_add_time_str": "2022-03-31 23:50:36"
+		}, {
+			"_id": {
+				"$oid": "62480731b5d74100012627a7"
+			},
+			"menu_id": "bwin-product-category",
+			"name": "产品分类",
+			"url": "/pages/bwin/product/category",
+			"icon": "vk-icon-list",
+			"sort": 0,
+			"enable": true,
+			"_add_time": 1648887600981,
+			"_add_time_str": "2022-04-02 16:20:00",
+			"parent_id": "bwin-product"
+		}],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "menu_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "menu_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "parent_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "parent_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "url",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "url",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "sort",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"opendb-app-list": {
+		"data": [{
+				"_id": "001",
+				"appid": "__UNI__01F080F",
+				"type": "client",
+				"name": "用户端",
+				"description": "此为用户端应用",
+				"create_date": 1596416400000,
+				"_add_time": 1596416400000,
+				"_add_time_str": "2020-08-03 09:00:00"
+			},
+			{
+				"_id": "002",
+				"appid": "__UNI__570A7FB",
+				"type": "admin",
+				"name": "管理端",
+				"description": "此为管理端应用",
+				"create_date": 1596416400000,
+				"_add_time": 1596416400000,
+				"_add_time_str": "2020-08-03 09:00:00"
+			}
+		],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "appid",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "appid",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "type",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "type",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "create_date",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "create_date",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"vk-components-dynamic": {
+		"data": [],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "data_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "data_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "title",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "title",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "type",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "type",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "sort",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "show",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "show",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"vk-global-data": {
+		"data": [
+
+		],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "key",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "key",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "expired_at",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "expired_at",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"vk-files": {
+		"data": [],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "user_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "user_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "sort",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "status",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "status",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "type",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "type",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "display_name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "display_name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "url",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "url",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"vk-files-categories": {
+		"data": [],
+		"index": [{
+				"IndexName": "_add_time",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "_add_time",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "name",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "name",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			},
+			{
+				"IndexName": "sort",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "sort",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	}
+}

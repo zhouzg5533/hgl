@@ -1,0 +1,28 @@
+{
+	"bsonType": "object",
+	"required": [
+		"content"
+	],
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"relname": {
+			"bsonType": "string",
+			"description": "留言反馈用户姓名"
+		},
+		"mobile": {
+			"bsonType": "string",
+			"description": "留言反馈用户手机号"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "留言内容",
+			"trim": "right"
+		},
+		"ip": {
+			"bsonType": "string",
+			"description": "用户IP地址"
+		}
+	}
+}
